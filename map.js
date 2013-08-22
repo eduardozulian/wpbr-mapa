@@ -72,7 +72,7 @@ google.maps.event.addDomListener(window, 'load', function(e) {
                                 + '<img src="' + maptheme.imgbase + gravatar.accounts[a].shortname + '.png" />'
                             + '</a>';
                         }
-                        accounts = accounts.join(' - ');
+                        accounts = accounts.join(' ');
 
                         hovercard.setContent(
                             '<div class="hovercard" style="width:300px; color:#444;">'
