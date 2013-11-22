@@ -6,12 +6,31 @@ var _map = $('#' + _map_id);
 if (!_map.length)
     return false;
 
-var options = {
-    center: new google.maps.LatLng(maptheme.lat, maptheme.lng),
-    zoom: 4,
-    maxZoom: 17,
-    streetViewControl: false,
-};
+request = {
+    QueryString : function(item){
+        var svalue = location.search.match(new RegExp("[\?\&]" + item + "=([^\&]*)(\&?)","i"));
+        return svalue ? svalue[1] : svalue;
+    }
+}
+
+var options;
+
+if (request.QueryString('embed') == null) {
+    options = {
+        center: new google.maps.LatLng(maptheme.lat, maptheme.lng),
+        zoom: 4,
+        maxZoom: 17,
+        streetViewControl: false,
+        scrollwheel: false,
+    };
+} else {
+    options = {
+        center: new google.maps.LatLng(maptheme.lat, maptheme.lng),
+        zoom: 4,
+        maxZoom: 17,
+        streetViewControl: false,
+    };
+}
 
 var map = new google.maps.Map(document.getElementById(_map_id), options);
 var hovercard = new google.maps.InfoWindow({});

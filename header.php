@@ -19,12 +19,14 @@
 
         <div id="map"></div>
 
-        <div id="blog-title">
-            <a href="<?php echo home_url(); ?>">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/header.png" />
-            </a>
-        </div>
-        <?php wp_nav_menu( array( 'container_class' => 'map-menu-top', 'theme_location' => 'mapasdevista_top', 'fallback_cb' => false ) ); ?>
+        <?php if ( !isset($_GET['embed']) ) : ?>
+            <div id="blog-title">
+                <a href="<?php echo home_url(); ?>">
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/header.png" />
+                </a>
+            </div>
+            <?php wp_nav_menu( array( 'container_class' => 'map-menu-top', 'theme_location' => 'mapasdevista_top', 'fallback_cb' => false ) ); ?>
+        <?php endif; ?>
 
         <?php $menu_positions = get_theme_mod('nav_menu_locations'); ?>
         <?php if (isset($menu_positions['mapasdevista_side']) && $menu_positions['mapasdevista_side'] != '0'): ?>
