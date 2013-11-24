@@ -51,4 +51,7 @@ function get_map_users() {
 
 }
 
+if ( isset( $_GET['embed'] ) )
+    add_filter('show_admin_bar', '__return_false');
+
 ?>
