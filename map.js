@@ -18,7 +18,7 @@ var options;
 if (request.QueryString('embed') == null) {
     options = {
         center: new google.maps.LatLng(maptheme.lat, maptheme.lng),
-        zoom: 4,
+        zoom: 5,
         maxZoom: 17,
         streetViewControl: false,
         scrollwheel: false,
