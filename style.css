@@ -123,6 +123,8 @@ img.alignleft   { float:left; margin:0 10px 9px 0; }
 img.alignright  { float:right; margin:0 0 9px 10px; }
 img.aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto;}
 
+.gm-style img {-webkit-border-radius: 50%; border-radius: 50%; -moz-border-radius: 50%;}
+
 /* Clearfix */
 .clearfix:after, .container:after { content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden; }
 .clearfix, .container { display:block; }
@@ -148,3 +150,4 @@ body { min-width:960px; }
 /* Title of the Blog */
 #blog-title     { left:90px; position:fixed; top:30px; max-width:240px; height:150px;}
 #blog-title img { max-width:240px; }
+
