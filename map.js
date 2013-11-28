@@ -96,7 +96,7 @@ google.maps.event.addDomListener(window, 'load', function(e) {
                         hovercard.setContent(
                             '<div class="hovercard" style="width:300px; color:#444;">'
                             + '<div class="col" style="float:left; width:85px">'
-                                + '<span class="thumbnail"><img src="' + gravatar.thumbnailUrl + '" /></span>'
+                                + '<span class="thumbnail"><img class="photouser" src="' + gravatar.thumbnailUrl + '" /></span>'
                             + '</div>'
                             + '<div class="col" style="float:left; width: 215px">'
                                 + '<span class="display-name" style="display:block; font-weight:bold; font-size:1.2em;">' + gravatar.displayName + '</span>'
