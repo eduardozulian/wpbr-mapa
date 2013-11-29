@@ -15,7 +15,7 @@ request = {
 
 var options;
 
-if (request.QueryString('embed') == null) {
+if (request.QueryString('embed')) {
     options = {
         center: new google.maps.LatLng(maptheme.lat, maptheme.lng),
         zoom: 5,
@@ -35,6 +35,19 @@ if (request.QueryString('embed') == null) {
 var map = new google.maps.Map(document.getElementById(_map_id), options);
 var hovercard = new google.maps.InfoWindow({});
 
+var markers = [];
+var marker_options = {
+    styles: [{
+        anchorIcon: [ 45, 39 ],
+        //fontFamily: Oswald,
+        fontWeight: 'bold',
+        width: 45,
+        height: 39,
+        textSize: 14,
+        url: maptheme.imgbase + 'marker.png',
+    }]
+};
+
 google.maps.event.addDomListener(window, 'load', function(e) {
 
     for (u in maptheme.users) {
@@ -50,7 +63,7 @@ google.maps.event.addDomListener(window, 'load', function(e) {
             map: map,
             icon: image
         });
-        marker.set('user', user);
+        markers.push(marker);
         google.maps.event.addListener(marker, 'click', function(){
             hovercard.setContent('<div id="loading" style="color:#444">Buscando...</div>');
             hovercard.open(map, this);
@@ -112,7 +125,7 @@ google.maps.event.addDomListener(window, 'load', function(e) {
             });
         });
     }
-
+    var markerCluster = new MarkerClusterer(map, markers, marker_options);
 });
 
 });

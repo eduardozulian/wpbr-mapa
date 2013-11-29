@@ -6,6 +6,7 @@ function enqueue_scripts() {
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'google-maps-v3', 'http://maps.google.com/maps/api/js?sensor=false' );
     wp_enqueue_script( 'maptheme', get_stylesheet_directory_uri() . '/js/map.js' );
+    wp_enqueue_script( 'markerclusterer', get_stylesheet_directory_uri() . '/js/markerclusterer.min.js' );
 
     if ( !defined( 'GEOUSER_INITIAL_LAT' ) || !GEOUSER_INITIAL_LAT
         || !defined( 'GEOUSER_INITIAL_LNG' ) || !GEOUSER_INITIAL_LNG ) {

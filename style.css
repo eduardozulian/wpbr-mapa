@@ -151,3 +151,18 @@ body { min-width:960px; }
 #blog-title     { left:90px; position:fixed; top:30px; max-width:240px; height:150px;}
 #blog-title img { max-width:240px; }
 
+/* Map clusterer counter */
+
+.cluster div {
+    position: absolute !important;
+    width: 20px !important;
+    top: -10px !important;
+    left: 18px !important;
+    color: #FFFFFF !important;
+    padding: 2px 4px !important;
+    line-height: 1 !important;
+    display: block !important;
+    background-color: #18759B !important;
+    border: 1px solid #FFF !important;
+    border-radius: 6px !important;
+}
