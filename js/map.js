@@ -63,6 +63,7 @@ google.maps.event.addDomListener(window, 'load', function(e) {
             map: map,
             icon: image
         });
+        marker.set('user', user);
         markers.push(marker);
         google.maps.event.addListener(marker, 'click', function(){
             hovercard.setContent('<div id="loading" style="color:#444">Buscando...</div>');
