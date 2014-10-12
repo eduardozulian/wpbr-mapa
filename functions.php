@@ -27,6 +27,9 @@ function get_map_users() {
 
     global $wpdb;
 
+    if ( $users = get_transient( 'map_users' ) )
+        return $users;
+
     $query = $wpdb->get_results( "
         SELECT user_id, user_email, display_name, meta_value
         FROM {$wpdb->users}, {$wpdb->usermeta}
@@ -48,6 +51,9 @@ function get_map_users() {
             'lng' => $loc[1]
         );
     }
+
+    set_transient( 'map_users', $users, 3600 * 24 );
+
     return $users;
 
 }
