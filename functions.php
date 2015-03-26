@@ -43,12 +43,14 @@ function get_map_users() {
         $loc = unserialize( $q->meta_value );
         if ( empty( $loc[0] ) || empty( $loc[1] ) )
             continue;
+        $marker = !empty($loc[2]) ? get_stylesheet_directory_uri() . '/img/'.'pins/'.$loc[2].'.png' : $params['imgbase'] . 'marker.png';
         $users[] = array(
             'ID' => $q->user_id,
             'display_name' => $q->display_name,
             'gravatar' => md5( $q->user_email ),
             'lat' => $loc[0],
-            'lng' => $loc[1]
+            'lng' => $loc[1],
+            'marker' => $marker
         );
     }
 
